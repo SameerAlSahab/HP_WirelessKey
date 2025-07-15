@@ -1,22 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" 
+  "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
 <dict>
-    <key>CFBundleIdentifier</key>
-    <string>com.yourname.hpq6001driver</string>
-    <key>IOKitPersonalities</key>
+  <key>CFBundleDevelopmentRegion</key>
+  <string>en</string>
+
+  <key>CFBundleIdentifier</key>
+  <string>com.sameer.hpq6001driver</string>
+
+  <key>CFBundleInfoDictionaryVersion</key>
+  <string>6.0</string>
+
+  <key>CFBundleName</key>
+  <string>HPQ6001Driver</string>
+
+  <key>CFBundlePackageType</key>
+  <string>KEXT</string>
+
+  <key>CFBundleVersion</key>
+  <string>1.0.0</string>
+
+  <key>IOKitPersonalities</key>
+  <dict>
+    <key>HPQ6001 ACPI Driver</key>
     <dict>
-        <key>HPQ6001Driver</key>
-        <dict>
-            <key>IOClass</key>
-            <string>HPQ6001Driver</string>
-            <key>IOProviderClass</key>
-            <string>IOACPIPlatformDevice</string>
-            <key>ACPIMatchIDs</key>
-            <array>
-                <string>HPQ6001</string>
-            </array>
-            <key>IOMatchCategory</key>
-            <string>IOACPIPlatformDevice</string>
-        </dict>
+      <key>CFBundleIdentifier</key>
+      <string>com.example.driver.HPQ6001Driver</string>
+
+      <key>IOClass</key>
+      <string>HPQ6001Driver</string>
+
+      <key>IOProviderClass</key>
+      <string>IOACPIPlatformDevice</string>
+
+      <key>IONameMatch</key>
+      <string>HPQ6001</string>
+      
+      <key>IOKitDebug</key>
+      <integer>65535</integer>
     </dict>
-    <key>OSBundleRequired</key>
-    <string>Console</string>
+  </dict>
+
+  <key>OSBundleRequired</key>
+  <string>Root</string>
 </dict>
+</plist>

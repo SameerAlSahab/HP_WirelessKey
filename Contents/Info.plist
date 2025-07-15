@@ -1,0 +1,22 @@
+<dict>
+    <key>CFBundleIdentifier</key>
+    <string>com.yourname.hpq6001driver</string>
+    <key>IOKitPersonalities</key>
+    <dict>
+        <key>HPQ6001Driver</key>
+        <dict>
+            <key>IOClass</key>
+            <string>HPQ6001Driver</string>
+            <key>IOProviderClass</key>
+            <string>IOACPIPlatformDevice</string>
+            <key>ACPIMatchIDs</key>
+            <array>
+                <string>HPQ6001</string>
+            </array>
+            <key>IOMatchCategory</key>
+            <string>IOACPIPlatformDevice</string>
+        </dict>
+    </dict>
+    <key>OSBundleRequired</key>
+    <string>Console</string>
+</dict>

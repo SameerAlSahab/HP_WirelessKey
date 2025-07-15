@@ -10,7 +10,9 @@ bool HPQ6001Driver::start(IOService* provider) {
 
     _acpiDevice = OSDynamicCast(IOACPIPlatformDevice, provider);
     if (_acpiDevice) {
-        IOLog("HPQ6001Driver: Detected HPQ6001 ACPI device.\n");
+        IOLog("HPQ6001Driver: HPQ6001 ACPI device detected.\n");
+    } else {
+        IOLog("HPQ6001Driver: Not an ACPI device.\n");
     }
 
     return true;

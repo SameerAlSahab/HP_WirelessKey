@@ -1,0 +1,115 @@
+// !Xcode project file
+// HPQ6001Driver minimal kernel extension build
+{
+  archiveVersion = 1;
+  classes = {};
+  objectVersion = 50;
+  objects = {
+
+    /* Begin PBXBuildFile section */
+    E11111111111111111111111 /* HPQ6001Driver.cpp */ = {isa = PBXBuildFile; fileRef = E22222222222222222222222; };
+    E33333333333333333333333 /* HPQ6001Driver.hpp */ = {isa = PBXBuildFile; fileRef = E44444444444444444444444; };
+    /* End PBXBuildFile section */
+
+    /* Begin PBXFileReference section */
+    E22222222222222222222222 /* HPQ6001Driver.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Source/HPQ6001Driver.cpp; sourceTree = "<group>"; };
+    E44444444444444444444444 /* HPQ6001Driver.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Source/HPQ6001Driver.hpp; sourceTree = "<group>"; };
+    E55555555555555555555555 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Contents/Info.plist; sourceTree = "<group>"; };
+    /* End PBXFileReference section */
+
+    /* Begin PBXGroup section */
+    E66666666666666666666666 = {
+      isa = PBXGroup;
+      children = (
+        E22222222222222222222222,
+        E44444444444444444444444,
+        E55555555555555555555555,
+      );
+      name = Source;
+      sourceTree = "<group>";
+    };
+    E77777777777777777777777 = {
+      isa = PBXProject;
+      attributes = {
+        LastUpgradeCheck = 1300;
+        ORGANIZATIONNAME = "YourName";
+      };
+      buildConfigurationList = E88888888888888888888888;
+      compatibilityVersion = "Xcode 12.0";
+      developmentRegion = en;
+      hasScannedForEncodings = 0;
+      mainGroup = E66666666666666666666666;
+      productRefGroup = E66666666666666666666666;
+      projectDirPath = "";
+      projectRoot = "";
+      targets = (E99999999999999999999999);
+    };
+    /* End PBXGroup section */
+
+    /* Begin PBXNativeTarget section */
+    E99999999999999999999999 = {
+      isa = PBXNativeTarget;
+      buildConfigurationList = E10101010101010101010101;
+      buildPhases = (
+        E11111111111111111111112, // Sources
+      );
+      buildRules = ();
+      dependencies = ();
+      name = HPQ6001Driver;
+      productName = HPQ6001Driver;
+      productReference = E12121212121212121212121;
+      productType = "com.apple.product-type.kernel-extension";
+    };
+    /* End PBXNativeTarget section */
+
+    /* Begin PBXSourcesBuildPhase section */
+    E11111111111111111111112 = {
+      isa = PBXSourcesBuildPhase;
+      files = (
+        E11111111111111111111111,
+        E33333333333333333333333,
+      );
+    };
+    /* End PBXSourcesBuildPhase section */
+
+    /* Begin XCBuildConfiguration section */
+    E13131313131313131313131 = {
+      isa = XCBuildConfiguration;
+      buildSettings = {
+        PRODUCT_NAME = HPQ6001Driver;
+        INFOPLIST_FILE = Contents/Info.plist;
+        SKIP_INSTALL = YES;
+        BUILD_VARIANTS = normal;
+        MACOSX_DEPLOYMENT_TARGET = 11.0;
+        INSTALL_PATH = /Library/Extensions;
+        OTHER_CFLAGS = "-Wall -Werror";
+        CODE_SIGN_IDENTITY = "-";
+        ENABLE_KERNEL_EXTENSIONS = YES;
+      };
+      name = Release;
+    };
+    /* End XCBuildConfiguration section */
+
+    /* Begin XCConfigurationList section */
+    E10101010101010101010101 = {
+      isa = XCConfigurationList;
+      buildConfigurations = (
+        E13131313131313131313131,
+      );
+      defaultConfigurationIsVisible = 0;
+      defaultConfigurationName = Release;
+    };
+    /* End XCConfigurationList section */
+
+    E88888888888888888888888 = {
+      isa = XCConfigurationList;
+      buildConfigurations = (
+        E13131313131313131313131,
+      );
+      defaultConfigurationIsVisible = 0;
+      defaultConfigurationName = Release;
+    };
+
+  };
+  rootObject = E77777777777777777777777;
+}

@@ -5,7 +5,7 @@
 #include <IOKit/acpi/IOACPIPlatformDevice.h>
 
 class HPQ6001Driver : public IOService {
-    OSDeclareDefaultStructors(HPQ6001Driver)
+    OSDeclareDefaultStructorsWithDispatch(HPQ6001Driver)
 
 private:
     IOACPIPlatformDevice* _acpiDevice;

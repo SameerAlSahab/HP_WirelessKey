@@ -1,7 +1,6 @@
 #include <IOKit/IOLib.h>
 #include <IOKit/IOService.h>
 #include <IOKit/acpi/IOACPIPlatformDevice.h>
-#include <IOKit/hidsystem/IOHIKeyboard.h>
 #include "HPQ6001Driver.hpp"
 
 

@@ -1,0 +1,61 @@
+name: Build Kext
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+  release:
+    types: [published]
+
+env:
+  PROJECT_TYPE: KEXT
+  ACID32: 1
+
+jobs:
+  build:
+    name: Build HPQ6001Driver.kext
+    runs-on: macos-latest
+    env:
+      JOB_TYPE: BUILD
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v4
+
+      - name: Checkout MacKernelSDK
+        uses: actions/checkout@v4
+        with:
+          repository: acidanthera/MacKernelSDK
+          path: MacKernelSDK
+
+      - name: Bootstrap CI
+        run: |
+          curl -Lfs https://raw.githubusercontent.com/acidanthera/ocbuild/master/ci-bootstrap.sh | bash
+
+      - name: Bootstrap Lilu
+        run: |
+          curl -Lfs https://raw.githubusercontent.com/acidanthera/Lilu/master/Lilu/Scripts/bootstrap.sh | bash
+
+      - name: Build Debug
+        run: xcodebuild -configuration Debug -arch x86_64
+
+      - name: Build Release
+        run: xcodebuild -configuration Release -arch x86_64
+
+      - name: Zip Build Artifacts
+        run: |
+          mkdir -p out
+          zip -r out/HPQ6001Driver.kext.zip build/Release/HPQ6001Driver.kext
+
+      - name: Upload Build Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: HPQ6001Driver.kext
+          path: out/HPQ6001Driver.kext.zip
+
+      - name: Upload to GitHub Release
+        if: github.event_name == 'release'
+        uses: svenstaro/upload-release-action@v2
+        with:
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
+          file: out/HPQ6001Driver.kext.zip
+          tag: ${{ github.ref }}
